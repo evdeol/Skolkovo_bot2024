@@ -37,7 +37,7 @@ def func(message):
         markup.add(frequency_btn, energy_btn, exit_btn)
     
         
-        bot.send_message(message.from_user.id, text= 'Введите частоту (в Гц)'.format(message.from_user), reply_markup=markup)
+        bot.send_message(message.from_user.id, text= 'Введите частоту (в Гц) в виде числа или выражения типа: \n\n4*10**3 \n\nГде 10**3 - это 10 в степени 3'.format(message.from_user), reply_markup=markup)
         bot.register_next_step_handler(message, convert_frequency_to_wavelength)
             
     if(message.text == "Энергия фотона"): 
@@ -46,7 +46,7 @@ def func(message):
         energy_btn = types.KeyboardButton("Энергия фотона")
         exit_btn = types.KeyboardButton("Выйти в меню")
         markup.add(frequency_btn, energy_btn, exit_btn)
-        bot.send_message(message.from_user.id, text= 'Введите энергию (в эВ)'.format(message.from_user), reply_markup=markup)
+        bot.send_message(message.from_user.id, text= 'Введите энергию (в эВ) в виде числа или выражения типа: \n\n4*10**3 \n\nГде 10**3 - это 10 в степени 3'.format(message.from_user), reply_markup=markup)
         bot.register_next_step_handler(message, convert_energy_to_wavelength)
         
     if(message.text == "Выйти в меню"): 
